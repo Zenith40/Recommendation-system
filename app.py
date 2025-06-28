@@ -1,12 +1,19 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import os
 
-from utils import fetch_transformed_data, anime_info, chatbot
+from utils import fetch_transformed_data, anime_info
+from recommendationSystem.chatbot.client_module.utils import chatbot, render_history_download,render_loader
 
 #---------------------------------------------------------------------------
 
+path = os.path.join("chromadb_anime_data_7490_e5largev2_1.5K_batch")
+
+#run_fastapi()
+render_loader(path)
 chatbot()
+render_history_download()
 
 #----------------------------------------------------------------------------
  

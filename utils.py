@@ -1,4 +1,6 @@
 import streamlit as st
+
+
 from predict_trial import return_data
 
 @st.cache_resource
@@ -54,32 +56,3 @@ def anime_info(anime_name,anime_data,similarity_matrix):
                     st.link_button("Know More", link[i+2],use_container_width=True)
 
                 st.write('\n\n\n')
-
-
-# --------------------------------------------------------------------------------------------
-
-def chatbot():
-    with st.sidebar:
-
-        # Input and response
-        user_input = st.chat_input(placeholder="Ask Anything")
-
-        if "messages" not in st.session_state:
-            st.session_state.messages = []
-
-        if user_input:
-            #st.chat_message("user").markdown(user_input)
-            st.session_state.messages.append({"role": "user", "content": user_input})
-        
-
-        # Render existing chat history
-        for msg in st.session_state.messages[::-1]:
-            st.chat_message(msg["role"]).markdown(msg["content"])
-
-        if user_input:
-            answer = " :( ?"
-            st.chat_message("assistant").markdown(answer)
-            st.session_state.messages.append({"role": "assistant", "content":answer })
-
-        
-        

@@ -8,4 +8,38 @@ streamlit
 ipykernel
 openpyxl
 dill
+
+# chatbot requirements
+
+# Web Framework
+fastapi
+uvicorn[standard]
+
+# LangChain & Ecosystem
+langchain
+langchain-community
+langchain-core
+langchain-groq
+
+# Vectorstore
+chromadb
+
+# Embeddings
+sentence-transformers
+
+# PDF Parsing
+PyPDF  # backend for PyPDFLoader via langchain_community
+
+# Environment Variables
+python-dotenv
+
+# Typing & Utilities
+pydantic
+requests
+
+# Logging (optional but recommended)
+#loguru
+python-multipart
+# File Uploads
+aiofiles
 -e.

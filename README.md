@@ -1,6 +1,6 @@
 # 🎌 Anime Recommendation System
 
-This project is an anime recommendation engine that suggests similar anime based on the storyline using **cosine similarity**. It processes and analyzes a dataset of over **12,000+ anime** titles collected through web scraping, and applies **natural language processing (NLP)** techniques to generate meaningful recommendations.
+This project is an anime recommendation engine that suggests similar anime based on the storyline using **cosine similarity**. It processes and analyzes a dataset of over **7,000+ anime** titles collected through web scraping, and applies **natural language processing (NLP)** techniques to generate meaningful recommendations.
 
 The application is containerized using **Docker** for consistent deployment across environments.
 
@@ -85,9 +85,3 @@ This project is licensed under the MIT License
 * NLTK
 
 * scikit-learn
-
-<<<<<<< HEAD
-* AnimePlanet / MyAnimeList (for reference data structure)
-=======
-* AnimePlanet / MyAnimeList (for reference data structure)
->>>>>>> 716c18ea696631c4fd9bba901dee8cf905133153

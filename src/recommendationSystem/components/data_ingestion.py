@@ -20,8 +20,9 @@ class DataIngestion:
 
         try:
             # Importing Data
-            df_info = pd.read_csv('data/anime_data_24.csv')
-            df_links = pd.read_csv('data/anime_links.csv')
+            #df_info = pd.read_csv('data/anime_data_24.csv')
+            #df_links = pd.read_csv('data/anime_links.csv')
+            anime = pd.read_csv(os.path.join("data","anime_data_7490.csv"))
             logger.info("Read the dataset as a dataframe")
 
             # Making Directory to store the data
@@ -29,18 +30,18 @@ class DataIngestion:
             logger.info("created directory for datframe")
             
             # Merging the dataset
-            anime = df_info.merge(df_links,on='name')
+            #anime = df_info.merge(df_links,on='name')
 
             # Selecting the required columns
-            anime = anime[['name','sypnopsis','image','type','episodes','status','studios','source','genres','demographic','links']]
-            anime.dropna(inplace=True)
-            logger.info("Filtered out necessary columns and dropped NA rows")
+            #anime = anime[['name','sypnopsis','image','type','episodes','status','studios','source','genres','demographic','links']]
+            #anime.dropna(inplace=True)
+            #logger.info("Filtered out necessary columns and dropped NA rows")
 
             # Formatting the data to get clean data
-            anime['sypnopsis_length'] = [len(i) for i in anime.sypnopsis]
-            anime = anime[anime['sypnopsis_length'] > 300]
+            #anime['sypnopsis_length'] = [len(i) for i in anime.sypnopsis]
+            #anime = anime[anime['sypnopsis_length'] > 300]
             anime['tags'] = anime['sypnopsis']+" " + anime['type']+" " + anime['episodes']+" " \
-                + anime['status'] +" "+ anime['studios'] +" "+ anime['source']+" " + anime['genres']+" " + anime['demographic']   
+               + anime['status'] +" "+ anime['studios'] +" "+ anime['source']+" " + anime['genres']+" " + anime['demographic']   
 
             # Saving the clean data 
             anime.to_csv(self.ingestion_config.data_path,index=False,header=True)
