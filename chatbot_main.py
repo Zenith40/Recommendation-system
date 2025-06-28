@@ -2,7 +2,9 @@ from fastapi import FastAPI,File,Form,Request,Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-import os
+import threading
+import uvicorn
+#import os
 
 from recommendationSystem.chatbot.server_modules.llm import get_llm_chain
 from recommendationSystem.chatbot.server_modules.load_vector_store import use_vectorstore
@@ -52,3 +54,8 @@ async def ask_question(question:str=Form(...)):
         chain=get_llm_chain(vectorstore)
         result=query_chain(chain,question)
         return result
+
+def run_api():
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
