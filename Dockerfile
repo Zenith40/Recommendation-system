@@ -10,15 +10,16 @@ COPY . .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Building Local Package
-RUN python main.py
-
 # Optional: install as a local package (important!)
-#RUN pip install -e .
+RUN pip install -e .
 
 # Expose Streamlit default port
-EXPOSE 8501
+EXPOSE 8000 8501
+
+# Run your app in both FastAPI and Streamlit
+CMD ["python", "run_both.py", "run"]
 
 # Run Streamlit app
-CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+#CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
 

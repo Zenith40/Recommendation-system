@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 import os
-import threading
+#import threading
 
 
 from utils import fetch_transformed_data, anime_info

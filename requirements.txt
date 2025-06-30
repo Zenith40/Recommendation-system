@@ -8,6 +8,7 @@ streamlit
 ipykernel
 openpyxl
 dill
+docker
 
 # chatbot requirements
 
@@ -36,6 +37,7 @@ python-dotenv
 # Typing & Utilities
 pydantic
 requests
+mangum
 
 # Logging (optional but recommended)
 #loguru

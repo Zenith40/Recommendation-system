@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "chatbot_main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "chatbot_main.py"
+    }
+  ]
+}
