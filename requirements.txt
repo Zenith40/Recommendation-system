@@ -37,7 +37,6 @@ python-dotenv
 # Typing & Utilities
 pydantic
 requests
-mangum
 
 # Logging (optional but recommended)
 #loguru

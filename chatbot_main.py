@@ -4,7 +4,6 @@ from pydantic import BaseModel
 
 #import threading
 import uvicorn
-from mangum import Mangum
 #import os
 
 from recommendationSystem.chatbot.server_modules.llm import get_llm_chain
@@ -56,8 +55,8 @@ async def ask_question(question:str=Form(...)):
     result=query_chain(chain,question)
     return result
 
-handler = Mangum(app)
-
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000, reload=False)
 '''def run_api():
     uvicorn.run("chatbot_main:app", host="0.0.0.0", port=8000,reload=False)'''
 

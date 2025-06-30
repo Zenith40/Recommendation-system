@@ -3,11 +3,14 @@ import pandas as pd
 import pickle
 import os
 #import threading
+import subprocess
+import threading
+import time
 
 
 from utils import fetch_transformed_data, anime_info
 from recommendationSystem.chatbot.client_module.utils import chatbot, render_history_download #render_loader
-from chatbot_main import run_api
+#from chatbot_main import run_api
 
 #---------------------------------------------------------------------------
 #api_thread = threading.Thread(target=run_api, daemon=True)
@@ -18,6 +21,15 @@ path = os.path.join("chromadb")
 #run_api()
 #api_thread.start()
 #render_loader(path)
+def run_fastapi():
+    subprocess.Popen(["python", "chatbot_main.py"])
+
+@st.cache_resource
+def start_api_server():
+    threading.Thread(target=run_fastapi, daemon=True).start()
+    time.sleep(3)  # Give FastAPI time to start
+
+start_api_server()
 chatbot()
 render_history_download()
 
