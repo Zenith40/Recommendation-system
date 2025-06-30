@@ -55,7 +55,7 @@ async def ask_question(question:str=Form(...)):
     result=query_chain(chain,question)
     return result
 
-def run_api():
-    uvicorn.run("chatbot_main:app", host="0.0.0.0", port=8000,reload=False)
+'''def run_api():
+    uvicorn.run("chatbot_main:app", host="0.0.0.0", port=8000,reload=False)'''
 
 
