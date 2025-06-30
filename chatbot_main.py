@@ -2,7 +2,7 @@ from fastapi import FastAPI,File,Form,Request,Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-import threading
+#import threading
 import uvicorn
 #import os
 
@@ -39,23 +39,23 @@ async def loadpdf(data:PathInput):
 
 @app.post("/ask/")
 async def ask_question(question:str=Form(...)):
-        from langchain.vectorstores import Chroma
-        from langchain.embeddings import HuggingFaceBgeEmbeddings
-        from recommendationSystem.chatbot.server_modules.load_vector_store import save_path
-
-        vectorstore=Chroma(
-            persist_directory=save_path,
-            embedding_function=HuggingFaceBgeEmbeddings(
-                model_name="intfloat/e5-large-v2",
-                #model_kwargs={'device': 'cuda'},     # if using GPU
-                encode_kwargs={'batch_size': 32, 'normalize_embeddings': True}
-                )
+    from langchain.vectorstores import Chroma
+    from langchain.embeddings import HuggingFaceBgeEmbeddings
+    from recommendationSystem.chatbot.server_modules.load_vector_store import save_path
+    
+    vectorstore=Chroma(
+        persist_directory=save_path,
+        embedding_function=HuggingFaceBgeEmbeddings(
+            model_name="intfloat/e5-large-v2",
+            #model_kwargs={'device': 'cuda'},     # if using GPU
+            encode_kwargs={'batch_size': 32, 'normalize_embeddings': True}
         )
-        chain=get_llm_chain(vectorstore)
-        result=query_chain(chain,question)
-        return result
+    )
+    chain=get_llm_chain(vectorstore)
+    result=query_chain(chain,question)
+    return result
 
 def run_api():
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000,reload=False)
 
 

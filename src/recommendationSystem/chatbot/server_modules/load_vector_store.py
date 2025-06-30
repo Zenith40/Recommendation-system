@@ -1,15 +1,15 @@
 import os
-from pathlib import Path
+#from pathlib import Path
 from langchain.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.document_loaders import PyPDFLoader
+#from langchain.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 
 
 # Initializing Directories
 
-save_path = os.path.join("chromadb_anime_data_7490_e5largev2_1.5K_batch")
+save_path = os.path.join("chromadb")
 #os.makedirs(save_path, exist_ok=True)
 
 def load_vectorstore(pdf_path):
