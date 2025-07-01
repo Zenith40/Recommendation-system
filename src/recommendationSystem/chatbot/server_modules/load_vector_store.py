@@ -8,7 +8,7 @@ def use_vectorstore():
   
   embeddings = HuggingFaceEmbeddings(
     model_name="intfloat/e5-large-v2",
-    encode_kwargs={'batch_size': 32, 'normalize_embeddings': True}
+    #encode_kwargs={'batch_size': 32, 'normalize_embeddings': True}
   )
 
   vectorstore = Chroma(

@@ -43,7 +43,7 @@ class DataIngestion:
             anime['tags'] = anime['sypnopsis']+" " + anime['type']+" " + anime['episodes']+" " \
                + anime['status'] +" "+ anime['studios'] +" "+ anime['source']+" " + anime['genres']+" " + anime['demographic']   
 
-            # Saving the clean data 
+            # Saving the clean data py
             anime.to_csv(self.ingestion_config.data_path,index=False,header=True)
             logger.info("Ingestion is completed")
             logger.info("---------------x DIRECTORY CHANGE x------------------")

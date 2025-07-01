@@ -6,9 +6,8 @@ scikit-learn
 nltk
 streamlit
 ipykernel
-openpyxl
-dill
 docker
+dill
 
 # chatbot requirements
 
@@ -22,16 +21,12 @@ langchain-community
 langchain-core
 langchain-groq
 langchain-huggingface
-langchain-chroma
 
 # Vectorstore
 chromadb
 
 # Embeddings
 sentence-transformers
-torch
-transformers
-
 
 # Environment Variables
 python-dotenv
