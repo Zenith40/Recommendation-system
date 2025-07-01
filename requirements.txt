@@ -21,12 +21,16 @@ langchain
 langchain-community
 langchain-core
 langchain-groq
+langchain-huggingface
+langchain-chroma
 
 # Vectorstore
 chromadb
 
 # Embeddings
 sentence-transformers
+torch
+transformers
 
 # PDF Parsing
 PyPDF  # backend for PyPDFLoader via langchain_community
@@ -41,6 +45,5 @@ requests
 # Logging (optional but recommended)
 #loguru
 python-multipart
-# File Uploads
-aiofiles
--e.
+
+#-e.

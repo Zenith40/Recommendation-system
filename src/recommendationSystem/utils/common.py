@@ -23,13 +23,7 @@ class CustomException(Exception):
         return self.error_message
     
 
-# Testing the exception file
-'''if __name__ == "__main__":
-    try:
-        a = 1/0
-    except Exception as e:
-        logging.info("Divide by Zero Error")
-        raise CustomException(e,sys)''' 
+
 
 
 # --------------------------------- PREPROCESSING THE TEXT IN THE DATAFRAME --------------------------------------------
@@ -115,18 +109,4 @@ def find_anime(label):
     story = '\n'.join(df[df.name == label].sypnopsis.to_list())
     return story
 
-# --------------------------------- Running main.py file --------------------------------------------
 
-'''from recommendationSystem.logging import logger
-from recommendationSystem.components.data_ingestion import DataIngestion
-from recommendationSystem.components.data_transformation import DataTransformation
-
-def run_main():
-    logger.info("Starting the Custom logger")
-    logger.info("---------------x DIRECTORY CHANGE x------------------")
-
-    obj = DataIngestion()
-    data  = obj.initiate_data_ingestion()
-    DataTransformation().initiate_data_transformation_obj(data)
-
-    logger.info('------------------ | Execution Completed |---------------------')'''
