@@ -8,7 +8,7 @@ with open("README.md","r",encoding="utf-8") as f:
     long_description = f.read()
 
 # Define metadata variables
-__version__ = '0.0.0'
+__version__ = '0.0.1'
 src_name = 'recommendation-system'
 author_name = 'Satkar'
 author_user_name = 'Zenith40'
@@ -35,7 +35,7 @@ setup(
     version = __version__,
     author = author_name,
     author_email = 'zenith04u@gmail.com',
-    description = 'recommending similar anime to the user based  on the anime selected.',
+    description = 'Recommendation system + RAG Chatbot',
     long_description=long_description,
     long_description_content_type='text/markdown',
     url = f"https://github.com/{author_user_name}/{src_name}",
