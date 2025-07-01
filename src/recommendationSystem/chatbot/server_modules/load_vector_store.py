@@ -1,5 +1,5 @@
-from langchain_chroma import Chroma
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain.vectorstores import Chroma
+from langchain.embeddings import HuggingFaceEmbeddings
 import os
 
 save_path = os.path.join("chromadb")
