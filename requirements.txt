@@ -32,8 +32,6 @@ sentence-transformers
 torch
 transformers
 
-# PDF Parsing
-PyPDF  # backend for PyPDFLoader via langchain_community
 
 # Environment Variables
 python-dotenv
