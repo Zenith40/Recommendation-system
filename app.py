@@ -4,7 +4,7 @@ import pickle
 
 #------------------------------------RAG BASED CHATBOT ---------------------------------------
 
-from recommendationSystem.chatbot.client_module.utils import chatbot #render_history_download
+from recommendationSystem.chatbot.client_module.utils import chatbot
 
 chatbot()
 #render_history_download()
