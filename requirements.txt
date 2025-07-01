@@ -25,6 +25,8 @@ langchain-huggingface
 # Vectorstore
 chromadb
 
+protobuf==3.20.3
+
 # Embeddings
 sentence-transformers
 
