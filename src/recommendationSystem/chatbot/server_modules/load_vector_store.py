@@ -6,6 +6,7 @@ save_path = os.path.join("chromadb")
 
 def use_vectorstore():
   
+  
   embeddings = HuggingFaceEmbeddings(
     model_name="intfloat/e5-large-v2",
     #encode_kwargs={'batch_size': 32, 'normalize_embeddings': True}
@@ -13,7 +14,7 @@ def use_vectorstore():
 
   vectorstore = Chroma(
       persist_directory=save_path,
-      embedding_function=embeddings
+      embedding_function=embeddings,
   )
 
   return vectorstore

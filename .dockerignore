@@ -1,0 +1,9 @@
+.git
+*.log
+*.pyc
+__pycache__/
+template.py
+rsys/
+logs/
+artifact/
+try.py

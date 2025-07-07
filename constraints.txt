@@ -1,0 +1,6 @@
+# Not required but getting installed due to langchain & Huggingface
+tensorflow==0.0.0
+tensorflow-intel==0.0.0
+keras==0.0.0
+ml-dtypes==0.0.0
+tensorboard==0.0.0
