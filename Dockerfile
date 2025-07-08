@@ -13,16 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt -c constraints.txt
 # Optional: install as a local package (important!)
 RUN pip install -e .
 
-# Set up proper Streamlit config to bind to 0.0.0.0
-RUN mkdir -p ~/.streamlit && \
-    echo "\
-[server]\n\
-headless = true\n\
-port = 8501\n\
-enableCORS = false\n\
-address = \"0.0.0.0\"\n\
-" > ~/.streamlit/config.toml
-
 # Expose Streamlit default port
 EXPOSE 8501
 
@@ -31,6 +21,6 @@ EXPOSE 8501
 
 
 # Run Streamlit app
-CMD ["streamlit", "run", "app.py"]
+CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
 
 
