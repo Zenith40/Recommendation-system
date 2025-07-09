@@ -1,64 +1,84 @@
-# 🎌 Anime Recommendation System
+# 🧠 Anime Recommendation Engine with RAG Chatbot
 
-This project is an anime recommendation engine that suggests similar anime based on the storyline using **cosine similarity**. It processes and analyzes a dataset of over **7,000+ anime** titles collected through web scraping, and applies **natural language processing (NLP)** techniques to generate meaningful recommendations.
+This project features an intelligent and scalable **Anime Recommendation System** that suggests anime titles based on storyline similarity, utilizing **cosine similarity** for accurate matching. It analyzes a dataset of over **7,000 anime titles**, which were collected through **web scraping**. The data is then cleaned and processed using natural language processing (NLP) techniques to generate precise recommendations.
 
-The application is containerized using **Docker** for consistent deployment across environments.
+Additionally, the project includes a **Retrieval-Augmented Generation (RAG)** based **Anime Chatbot**. This chatbot offers contextual and intelligent responses to user queries related to anime, leveraging the capabilities of **LangChain**, **Groq**, **Hugging Face**, and **FastAPI**.
 
----
 
-## 🚀 Features
-
-- Recommends animes based on **storyline similarity**
-- Built using **CountVectorizer + Porter Stemmer + Cosine Similarity**
-- Cleaned and preprocessed data pipeline from raw scraped sources
-- Fast, scalable recommendation system
-- Dockerized for smooth deployment
+🚀 Live Demo
+👉 [Try the Anime Chatbot on Hugging Face Spaces](https://huggingface.co/spaces/zenith04/anime_recommendation_system)
 
 ---
 
-## 🛠 Tech Stack
+## 📌 Features
+🔍 Recommends similar anime based on **storyline content**.
 
-- **Python 3.9+**
-- **scikit-learn** for CountVectorizer & Cosine Similarity
-- **NLTK** for text preprocessing (PorterStemmer)
-- **Flask/FastAPI** (in `app.py`)
-- **Docker** for containerization
-- **BeautifulSoup / Scrapy** (for scraping, if applicable)
+📖 Uses **CountVectorizer**, **Porter Stemmer**, and **Cosine Similarity** for recommendation generation.
 
+🧹 Includes a **complete NLP preprocessing pipeline** to clean scraped anime synopses.
+
+🧱 **Dockerized** application for easy and consistent deployment.
+
+🤖 **RAG-based chatbot** for intelligent anime Q&A.
+
+⚡ Fast, efficient, and scalable system capable of handling thousands of anime titles.
+
+---
+
+## 🛠️ Tech Stack
+**Recommendation Engine:**
+- Python
+- Scikit-learn
+- Pandas, NumPy
+- NLP (CountVectorizer + Stemming)
+- Cosine Similarity
+
+**RAG Chatbot:**
+- LangChain
+- Groq (LLM inference)
+- Hugging Face Transformers
+- FastAPI
+
+**Others:**
+- Docker (Containerization)
+- BeautifulSoup, Requests (Web scraping)
+- Hugging Face Spaces (Deployment)
+  
 ---
 
 ## 📊 Methodology
 
-1. **Data Collection**  
-   - Scraped storyline and metadata for 12,000+ animes.
-   - Structured data in a tabular format and removed duplicates, nulls, and irrelevant entries.
+1. **Web Scraping**  
+   - Collected anime metadata and descriptions from online sources using **BeautifulSoup**.
 
-2. **Text Preprocessing**  
-   - Converted to lowercase
-   - Removed special characters and stop words
-   - Applied **Porter Stemming** to normalize tokens
+2. **Data Cleaning & Preprocessing**  
+   - Removed HTML tags, punctuation, and stopwords. Applied stemming using the **PorterStemmer**.
 
 3. **Feature Extraction**  
-   - Used **CountVectorizer** to convert text into token count vectors
-   - Removed high-dimensional noise with feature filtering
+   - Used **CountVectorizer** to convert cleaned text into a Bag-of-Words representation.
 
 4. **Similarity Calculation**  
-   - Used **Cosine Similarity** to compute similarity scores between anime storylines
+   - Computed **cosine similarity** across anime descriptions to identify top-n similar anime titles.
 
 5. **Recommendation**  
    - Returned the top N animes with the highest similarity to a selected title
 
+6. **RAG Chatbot**
+   - Embedded anime knowledge base using **Hugging Face Embeddings**.
+   - Vector storage handled via **Chromadb**.
+   - Integrated with a **Groq**-powered LLM using **LangChain**.
+   - Exposed via a **FastAPI** web interface and deployed to Hugging Face.
 ---
 
 ## 📦 Docker Deployment
 
-* To run the app using Docker: https://hub.docker.com/r/zenith40/recommendation-system
+* Both the recommendation engine and chatbot are **fully containerized** : https://hub.docker.com/r/zenith40/recommendation-system
 
 ### Pull the Image
-* docker pull zenith40/recommendation-system:Ver-0.0.1
+* docker pull zenith40/recommendation-system:v2
 
 ### Run the container
-* docker run -p 8501:8501 zenith40/recommendation-system:Ver-0.0.1
+* docker run -p 8501:8501 zenith40/recommendation-system:v2
 * Then, open your browser and navigate to http://localhost:8501
 
 ---
@@ -81,7 +101,14 @@ The application is containerized using **Docker** for consistent deployment acro
 📄 License
 This project is licensed under the MIT License
 
-🙌 Acknowledgements
+## 🙌 Acknowledgements
+* Scikit-learn
 * NLTK
+* LangChain
+* Groq
+* FastAPI
+* Hugging Face Spaces
+* BeautifulSoup
+* [MyAnimeList](https://myanimelist.net/topanime.php) used for data collection 
 
-* scikit-learn
+
